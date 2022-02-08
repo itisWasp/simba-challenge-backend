@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 class privateRoute {
     static authUser = (req, res, next) => {
         const token = req.header('auth-token');
-        if(!token) return res.status(401).send('Access Denied');
+        if(!token) return res.status(401).json({message: 'Access Denied'});
     
         try {
             
@@ -13,7 +13,7 @@ class privateRoute {
             next();
     
         } catch (error) {
-            res.status(400).send('Invalid Token');
+            res.status(400).json({message:'Invalid Token'});
         }
     
     }
