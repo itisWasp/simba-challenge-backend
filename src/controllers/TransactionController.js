@@ -63,6 +63,18 @@ class TransactionController {
         }
 
     }
+
+    static GetAllTransactions = async (req, res) => {
+        try {
+            let transaction = await Transaction.find();
+            res.status(200).json({ transaction });
+        }
+         catch (error) {
+            res.status(404).json({message: error});
+        }
+
+    }
+
 }
 
 export default TransactionController;
