@@ -5,7 +5,7 @@ import {registerValidation} from '../middlewares/TransactionValidation.js';
 // import schema from ''
 class TransactionController {
     static send = async (req, res) => {
-        const token = req.header('auth-token');
+        const token = req.header('Auth-Token');
         if(!token) return res.status(401).send('Access Denied');
 
         //Let's validate the inputs.
