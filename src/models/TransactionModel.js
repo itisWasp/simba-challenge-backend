@@ -9,6 +9,13 @@ const TransactionSchema = mongoose.Schema({
         max: 255
     },
 
+    SenderUserName : {
+        type: 'string',
+        required: true,
+        min: 6,
+        max: 255
+    },
+
     ReceiverId : {
         type: 'string',
         required: true,
