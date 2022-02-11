@@ -9,8 +9,8 @@ class TransactionController {
         if(!token) return res.status(401).send('Access Denied');
 
         //Let's validate the inputs.
-        const {error} = registerValidation(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+        // const {error} = registerValidation(req.body);
+        // if (error) return res.status(400).send(error.details[0].message);
 
         try {
             const verified = jwt.verify(token, process.env.TOKEN_SECRET);
