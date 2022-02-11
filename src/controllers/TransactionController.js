@@ -23,6 +23,7 @@ class TransactionController {
 
             const test = {
                 SenderId: req.user.id,
+                SenderUserName : req.user.username,
                 ReceiverId: req.body.Receiver,
                 SendingAmount : req.body.SendingAmount,
                 ConvertedAmount : req.body.ConvertedAmount,
@@ -38,6 +39,7 @@ class TransactionController {
 
             const transaction = new Transaction({
                 SenderId: req.user.id,
+                SenderUserName : req.user.username,
                 ReceiverId: req.body.Receiver,
                 SendingAmount : req.body.SendingAmount,
                 ConvertedAmount : req.body.ConvertedAmount,
